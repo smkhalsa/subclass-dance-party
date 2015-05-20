@@ -21,7 +21,28 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
+
+  position:absolute;
+  background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
+  background-size: 100%;
+  height: 100px;
+  width: 100px;
+}
+
+.blinkyDancer{
   border:10px solid red;
+  border-radius:10px;
+  position:absolute;
+}
+
+.tinyDancer{
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+}
+
+.charlieDancer{
+  border:10px solid yellow;
   border-radius:10px;
   position:absolute;
 }

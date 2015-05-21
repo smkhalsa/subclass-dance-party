@@ -32,17 +32,45 @@ body, a:link, a:visited, a:active{
 .blinkyDancer{
   border:10px solid red;
   border-radius:10px;
-  position:absolute;
 }
 
 .tinyDancer{
   border:10px solid green;
   border-radius:10px;
-  position:absolute;
 }
 
 .charlieDancer{
   border:10px solid yellow;
   border-radius:10px;
-  position:absolute;
+}
+.musicPlayer {
+  height: 100%;
+  width: 20%;
+  top: 0;
+  left: 0;
+  float:left;
+  display:block;
+}
+
+#danceFloor {
+  float:left;
+  display:block;
+  width:80%;
+  height:100%;
+  position:relative;
+}
+
+#emitter {
+  background-color: #222;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+.dot {
+  background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
+  background-size: 100%;
+  position: absolute;
 }

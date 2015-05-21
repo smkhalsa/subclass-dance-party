@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Object Dance Party</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="lib/jquery.js"></script>
-    <script src="src/dancer.js"></script>
-    <script src="src/blinkyDancer.js"></script>
-    <script src="src/tinyDancer.js"></script>
-    <script src="src/Dancer.js"></script>
-    <script src="src/charlieDancer.js"></script>
+<head>
+  <title>Object Dance Party</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="lib/jquery.js"></script>
+  <script src="src/dancer.js"></script>
+  <script src="src/blinkyDancer.js"></script>
+  <script src="src/tinyDancer.js"></script>
+  <script src="src/Dancer.js"></script>
+  <script src="src/charlieDancer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/utils/Draggable.min.js"></script>
 
-  </head>
-  <body>
+
+</head>
+<body>
+
+    <iframe class="musicPlayer" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/109577167&amp;auto_play=true&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe>
+
+  <div id="danceFloor">
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>    </div>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="TinyDancer">add a tiny dancer</a>    </div>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="CharlieDancer">add a charlie dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="TinyDancer">add a tiny dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="CharlieDancer">add a charlie dancer</a>
       <a href="#" class="lineUpButton">line yo bitch asses up, fools!</a>
     </div>
 
+  </div>
 
-    <script src="src/init.js"></script>
+  <script src="src/init.js"></script>
 
-  </body>
+</div>
+</body>
 </html>

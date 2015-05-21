@@ -36,8 +36,8 @@ Dancer.prototype.lineUp = function(position,totalPositions){
     // where it belongs on the page. See http://api.jquery.com/css/
     //
 
-    var screenWidth = $("body").width();
-    var screenHeight =  $("body").height();
+    var screenWidth = $("#danceFloor").width();
+    var screenHeight =  $("#danceFloor").height();
 
     var styleSettings = {
       top: (screenHeight-100) / 2,

@@ -30,3 +30,18 @@ Dancer.prototype.setPosition = function(top, left){
     };
     this.$node.css(styleSettings);
   };
+
+Dancer.prototype.lineUp = function(position,totalPositions){
+    // Use css top and left properties to position our <span> tag
+    // where it belongs on the page. See http://api.jquery.com/css/
+    //
+
+    var screenWidth = $("body").width();
+    var screenHeight =  $("body").height();
+
+    var styleSettings = {
+      top: (screenHeight-100) / 2,
+      left: ((position+1)/(totalPositions+1)) * screenWidth
+    };
+    this.$node.animate(styleSettings);
+  };

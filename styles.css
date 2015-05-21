@@ -21,28 +21,26 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-
   position:absolute;
-  background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
-  background-size: 100%;
   height: 100px;
   width: 100px;
 }
 
-.blinkyDancer{
-  border:10px solid red;
-  border-radius:10px;
+.nutDancer {
+  background: url(http://xenboards.ignimgs.com/external_data/attachments/100/100307-f45f7f3be5b571e233b04505e69a1e34.jpg) no-repeat;
+  background-size: 100%;
 }
 
-.tinyDancer{
-  border:10px solid green;
-  border-radius:10px;
+.bananaDancer {
+  background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
+  background-size: 100%;
 }
 
-.charlieDancer{
-  border:10px solid yellow;
-  border-radius:10px;
+.jellyDancer {
+  background: url(http://img-cache.cdn.gaiaonline.com/2380720abcdbb95c53fc0e108a563344/http://i715.photobucket.com/albums/ww160/shuajo0712/tumblr_le3eoaJ5EN1qazdhko1_500.gif) no-repeat;
+  background-size: 100%;
 }
+
 .musicPlayer {
   height: 100%;
   width: 20%;
@@ -60,17 +58,21 @@ body, a:link, a:visited, a:active{
   position:relative;
 }
 
-#emitter {
-  background-color: #222;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-}
-.dot {
+.bananaDot {
   background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
   background-size: 100%;
   position: absolute;
 }
+
+.nutDot {
+  background: url(http://xenboards.ignimgs.com/external_data/attachments/100/100307-f45f7f3be5b571e233b04505e69a1e34.jpg) no-repeat;
+  background-size: 100%;
+  position: absolute;
+}
+
+.jellyDot {
+  background: url(http://img-cache.cdn.gaiaonline.com/2380720abcdbb95c53fc0e108a563344/http://i715.photobucket.com/albums/ww160/shuajo0712/tumblr_le3eoaJ5EN1qazdhko1_500.gif) no-repeat;
+  background-size: 100%;
+  position: absolute;
+}
+

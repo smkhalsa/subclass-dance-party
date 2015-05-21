@@ -41,7 +41,17 @@ Dancer.prototype.lineUp = function(position,totalPositions){
 
     var styleSettings = {
       top: (screenHeight-100) / 2,
-      left: ((position+1)/(totalPositions+1)) * screenWidth
+      left: (((position+1)/(totalPositions+1)) * screenWidth) - (this.$node.width()/2)
     };
     this.$node.animate(styleSettings);
-  };
+};
+
+var cityImages = [
+['sanFran', 'http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w'],
+['newYork', 'http://imgiy.com/wp-content/uploads/2015/05/new_york_1-1024x680.jpg'],
+['hackReactor', ''],
+['chicago', 'http://www.socrata.com/wp-content/uploads/2014/06/chicago-dreary-bean-1.jpg'],
+['tajMahal', 'https://taajmahal.files.wordpress.com/2014/01/taj-mahal2.jpg'],
+['disney', 'http://images.forwallpaper.com/files/images/8/8e64/8e648d27/285258/night-lights-fireworks-disneyland.jpg'],
+['beach', 'http://dreamatico.com/data_images/beach/beach-8.jpg']
+];

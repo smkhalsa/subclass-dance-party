@@ -54,7 +54,15 @@ $(document).ready(function(){
       //create all the dots
       for (i = 0; i < dotQuantity; i++) {
         dot = document.createElement("div");
-        dot.className = "dot";
+        var $container = $(container);
+        if($container.hasClass('bananaDancer')) {
+          dot.className = 'bananaDot';
+        } else if ($container.hasClass('nutDancer')) {
+          dot.className = 'nutDot';
+        } else if ($container.hasClass('jellyDancer')) {
+          dot.className = 'jellyDot';
+        }
+        // dot.className = this;
         size = getRandom(dotSizeMin, dotSizeMax);
         container.appendChild(dot);
         angle = Math.random() * Math.PI * 2; //random angle
@@ -66,9 +74,9 @@ $(document).ready(function(){
           y:Math.sin(angle) * length,
           width:size,
           height:size,
-           xPercent:-50,
-           yPercent:-50,
-          force3D:true
+          force3D:true,
+          left: (size-container.getAttribute('width'))/2.0,
+          top: (size-container.getAttribute('height'))/2.0
         });
         //this is where we do the animation...
         tl.to(dot, 1 + Math.random(), {
@@ -84,6 +92,12 @@ $(document).ready(function(){
           x:Math.cos(angle) * length * 6,
           y:Math.sin(angle) * length * 6
         }, 0);
+        tl.eventCallback('onComplete', function() {
+          var parentNode = dot.parentNode;
+          while(parentNode && parentNode.firstChild) {
+            parentNode.removeChild(parentNode.firstChild);
+          }
+        });
       }
       return tl;
     }
@@ -103,8 +117,9 @@ $(document).ready(function(){
     //explode initially, and then whenever the user presses on the dot.
     // explode(emitter);
     emitter.onmousedown = emitter.ontouchstart = function() {
-      explode(emitter);
-    }
+      // explode(emitter);
+      createExplosion(emitter);
+    };
 
 
   });
@@ -114,11 +129,39 @@ $(document).ready(function(){
 
     for(var i=0; i<window.dancers.length; i++) {
       var dancer = window.dancers[i];
+      dancer.$node.css({'transform': 'none'});
       dancer.lineUp(i, window.dancers.length);
     }
   });
 
+var cityImages = [
+['sanFran', 'http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w'],
+['newYork', 'http://imgiy.com/wp-content/uploads/2015/05/new_york_1-1024x680.jpg'],
+['chicago', 'http://www.socrata.com/wp-content/uploads/2014/06/chicago-dreary-bean-1.jpg'],
+['tajMahal', 'https://taajmahal.files.wordpress.com/2014/01/taj-mahal2.jpg'],
+['disney', 'http://images.forwallpaper.com/files/images/8/8e64/8e648d27/285258/night-lights-fireworks-disneyland.jpg'],
+['beach', 'http://dreamatico.com/data_images/beach/beach-8.jpg']
+];
 
+var slideShow = function() {
+  var imageIndex = 0;
+
+  var showImage = function() {
+    $('#danceFloor').fadeOut(300,function() {
+    $("#danceFloor").css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat center"});
+      $('#danceFloor').css({'background-size': ' cover'});
+
+    $("#danceFloor").fadeIn(300);
+  });
+    //$('body').css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat"});
+
+    imageIndex = (++imageIndex)%cityImages.length;
+    setTimeout(showImage, 8000);
+  };
+  showImage();
+};
+
+slideShow();
 
 });
 

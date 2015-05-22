@@ -1,7 +1,7 @@
 $(document).ready(function(){
   window.dancers = [];
 
-  $(".addDancerButton").on("click", function(event){
+  $("body").on("click",".addDancer", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on index.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -134,6 +134,24 @@ $(document).ready(function(){
     }
   });
 
+  $(".circleUpButton").on("click", function(event){
+
+    for(var i=0; i<window.dancers.length; i++) {
+      var dancer = window.dancers[i];
+      var angle = Math.PI * 2 * i/window.dancers.length;
+
+      var radius = Math.min($("#danceFloor").width(),$("#danceFloor").height()) / 2.0 *0.75;
+      var xFromCenter = Math.cos(angle) * radius;
+      var yFromCenter = Math.sin(angle) * radius;
+
+      var absX = $("#danceFloor").width() / 2.0 - dancer.$node.width() * 0.5 + xFromCenter;
+      var absY = $("#danceFloor").height() / 2.0 - dancer.$node.height() * 0.5 + yFromCenter;
+
+      dancer.$node.animate({'top': absY, 'left':absX});
+//      dancer.lineUp(i, window.dancers.length);
+    }
+  });
+
 var cityImages = [
 ['sanFran', 'http://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w'],
 ['newYork', 'http://imgiy.com/wp-content/uploads/2015/05/new_york_1-1024x680.jpg'],
@@ -143,25 +161,37 @@ var cityImages = [
 ['beach', 'http://dreamatico.com/data_images/beach/beach-8.jpg']
 ];
 
-var slideShow = function() {
-  var imageIndex = 0;
+// var slideShow = function() {
+//   var imageIndex = 0;
 
-  var showImage = function() {
-    $('#danceFloor').fadeOut(300,function() {
-    $("#danceFloor").css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat center"});
-      $('#danceFloor').css({'background-size': ' cover'});
+//   var showImage = function() {
+//     $('#danceFloor').fadeOut(300,function() {
+//     $("#danceFloor").css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat center"});
+//     $('#danceFloor').css({'background-size': ' cover'});
 
-    $("#danceFloor").fadeIn(300);
+//     $("#danceFloor").fadeIn(300);
+//   });
+//     //$('body').css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat"});
+
+//     imageIndex = (++imageIndex)%cityImages.length;
+//     setTimeout(showImage, 8000);
+//   };
+//   showImage();
+// };
+
+// slideShow();
+
+$('.addDancerButton').on('click', function() {
+  Modal.open({
+    content: '<div class="addDancer" data-dancer-maker-function-name="BananaDancer"><img src="http://i.stack.imgur.com/e8nZC.gif"></div>'+
+    '<div class="addDancer" data-dancer-maker-function-name="JellyDancer"><img src="http://img-cache.cdn.gaiaonline.com/2380720abcdbb95c53fc0e108a563344/http://i715.photobucket.com/albums/ww160/shuajo0712/tumblr_le3eoaJ5EN1qazdhko1_500.gif"></div>'+
+    '<div class="addDancer" data-dancer-maker-function-name="NutDancer"><img src="http://xenboards.ignimgs.com/external_data/attachments/100/100307-f45f7f3be5b571e233b04505e69a1e34.jpg"></div>',
+    width: '50%', // Can be set to px, em, %, or whatever else is out there.
+    // height: '50%',
+    hideclose: true // Hides the close-modal graphic
+    // closeAfter: 10 // Define this number in seconds.
   });
-    //$('body').css({'background': "url(" + cityImages[imageIndex][1] + ") no-repeat"});
-
-    imageIndex = (++imageIndex)%cityImages.length;
-    setTimeout(showImage, 8000);
-  };
-  showImage();
-};
-
-slideShow();
+});
 
 });
 

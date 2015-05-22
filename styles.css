@@ -9,7 +9,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .lineUpButton{
+.title, .addDancerButton, .lineUpButton, .circleUpButton{
   padding:5px 12px;
   float:right;
 }
@@ -29,16 +29,19 @@ body, a:link, a:visited, a:active{
 .nutDancer {
   background: url(http://xenboards.ignimgs.com/external_data/attachments/100/100307-f45f7f3be5b571e233b04505e69a1e34.jpg) no-repeat;
   background-size: 100%;
+  z-index:0;
 }
 
 .bananaDancer {
   background: url(http://i.stack.imgur.com/e8nZC.gif) no-repeat;
   background-size: 100%;
+  z-index:0;
 }
 
 .jellyDancer {
   background: url(http://img-cache.cdn.gaiaonline.com/2380720abcdbb95c53fc0e108a563344/http://i715.photobucket.com/albums/ww160/shuajo0712/tumblr_le3eoaJ5EN1qazdhko1_500.gif) no-repeat;
   background-size: 100%;
+  z-index:0;
 }
 
 .musicPlayer {
@@ -76,3 +79,12 @@ body, a:link, a:visited, a:active{
   position: absolute;
 }
 
+.addDancer {
+  float: left;
+  width: 27%;
+  margin: 3%;
+}
+.addDancer img {
+  width: 100%;
+  border: 2px #000000 solid;
+}

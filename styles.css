@@ -3,7 +3,6 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -59,6 +58,8 @@ body, a:link, a:visited, a:active{
   width:80%;
   height:100%;
   position:relative;
+  background: url(http://i.ytimg.com/vi/xPpLBP0OKL0/maxresdefault.jpg) no-repeat center;
+  background-size: cover;
 }
 
 .bananaDot {
